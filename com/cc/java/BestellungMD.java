@@ -4,8 +4,13 @@ import java.io.Console;
 
 public class BestellungMD {
     public static void main(String[] args) {
-        String food = "";
-        String drink = "";
+        String food = "noch kein Burger gewählt";
+        String drink = "noch kein Getränk gewählt";
+
+        System.out.println(food);  
+        System.out.println(drink); 
+
+
 
         Console console = System.console();
         if (console == null) {
@@ -14,7 +19,7 @@ public class BestellungMD {
         }
 
         System.out.println("Herzlich Willkommen bei MD, Ihre Bestellung bitte!");
-        System.out.println("Hamburger (1), Cheeseburger (2) oder Chilliburger (3)?");
+        System.out.println("Hamburger (1), Cheeseburger (2), Chilliburger (3) oder Pommes (4) ?");
 
         String burgerInput = console.readLine();
         int burgerAuswahl = Integer.parseInt(burgerInput);
@@ -28,6 +33,9 @@ public class BestellungMD {
                 break;
             case 3:
                 food = "Chilliburger";
+                break;
+            case 4:
+                food = "Pommes";
                 break;
             default:
                 System.out.println("Ungültige Auswahl.");
